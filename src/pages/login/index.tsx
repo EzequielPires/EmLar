@@ -12,7 +12,6 @@ export default function Login() {
     const handleSign = (e) => {
         e.preventDefault();
         router.push('/admin');
-        
     }
     return (
         <div className={styles.container}>
