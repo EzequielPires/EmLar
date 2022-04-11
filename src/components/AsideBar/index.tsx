@@ -2,8 +2,10 @@ import Link from "next/link";
 import { Icon } from "../Icon";
 import Logo from "../../assets/images/logo-white.svg";
 import styles from "./styles.module.scss";
+import { useRouter } from "next/router";
 
 export function AsideBar() {
+    const router = useRouter();
     return (
         <nav className={styles.aside_bar}>
             <div className={styles.header}>
@@ -12,12 +14,12 @@ export function AsideBar() {
                 </Link>
             </div>
             <ul>
-                <li className={styles.active}>
-                    <Link href="/">
+                <li className={router.asPath === "/admin" ? styles.active : null}>
+                    <Link href="/admin">
                         <a><Icon name={"home"} size={24} color={"#fff"} />Dashboard</a>
                     </Link>
                 </li>
-                <li>
+                <li className={router.asPath === "/admin/profile" ? styles.active : null}>
                     <Link href="/">
                         <a><Icon name={"user"} size={24} color={"#fff"} />User profiles</a>
                     </Link>
@@ -29,14 +31,14 @@ export function AsideBar() {
                 </li>
             </ul>
             <ul>
-                <li>
-                    <Link href="/">
-                        <a><Icon name={"arrow-right-squad"} size={24} color={"#fff"} />Imóveis</a>
+                <li className={router.asPath === "/admin/imoveis" ? styles.active : null}>
+                    <Link href="/admin/imoveis">
+                        <a>Imóveis</a>
                     </Link>
                 </li>
-                <li>
-                    <Link href="/">
-                        <a><Icon name={"arrow-right-squad"} size={24} color={"#fff"} />Tipos</a>
+                <li className={router.asPath === "/admin/tipos-imoveis" ? styles.active : null}>
+                    <Link href="/admin/tipos-imoveis">
+                        <a>Tipos</a>
                     </Link>
                 </li>
             </ul>

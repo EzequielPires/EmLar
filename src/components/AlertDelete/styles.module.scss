@@ -1,0 +1,17 @@
+.btn_prev, .btn_submit {
+    height: 48px;
+    flex: 1;
+    border: 0;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 600;
+    background: var(--main);
+}
+.btn_prev {
+    background: var(--red-color);
+}
+.title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #333;
+}

@@ -1,0 +1,68 @@
+.imoveis {
+    display: flex;
+}
+.content {
+    margin-top: 80px;
+    padding: 2rem;
+    flex: 1;
+}
+.header {
+    margin-bottom: 48px;
+    h4 {
+        margin-bottom: 0;
+        color: #333;
+    }
+    button {
+        height: 40px;
+        width: 148px;
+        border-radius: 8px;
+        background: var(--main);
+        color: #fff;
+        border: 0;
+    }
+}
+.table {
+    width: 700px;
+    background: #fff;
+    border: 1px solid var(--main);
+    border-radius: 8px;
+    overflow: hidden;
+    .row {
+        padding: .5rem 0rem;
+        display: flex;
+        border-bottom: 1px solid #ededed;
+        &:nth-child(1) {
+            background: var(--light);
+            border-bottom: 1px solid var(--main);
+            .item {
+                span {
+                    color: var(--main);
+                }
+            }
+        }
+        &:last-child {
+            border: 0;
+        }
+        .item {
+            flex: 1;
+            padding-left: 1rem;
+            &:nth-child(1) {
+                max-width: 150px;
+            }
+            &:last-child {
+                max-width: 100px;
+                display: flex;
+                gap: 1rem;
+            }
+            span {
+                font-weight: 600;
+                color: #333;
+            }
+            button {
+                border: 0;
+                background: transparent;
+                color: var(--main);
+            }
+        }
+    }
+}
