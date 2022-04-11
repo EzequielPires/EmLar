@@ -13,9 +13,9 @@ export default function TiposImoveis() {
     const [listTypes, setListTypes] = useState([]);
     const {alertShow} = useContext(AlertContext);
     const getTypesImmobiles = async () => {
-        const res: any = await api.get('/type-immobile/list').then(res => res.data);
-        console.log(res.data);
-        setListTypes(res.data);
+        //const res: any = await api.get('/type-immobile/list').then(res => res.data);
+        //console.log(res.data);
+        //setListTypes(res.data);
     }
     const handleSubmit = async (name) => {
         await api.post('/type-immobile/new', {
