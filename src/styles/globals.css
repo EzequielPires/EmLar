@@ -5,7 +5,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Inter", sans-serif;
-  overflow-x: hidden;
 }
 html {
   scroll-behavior: auto !important;
@@ -18,6 +17,10 @@ body {
 :root {
   --main: #4C74FF;
   --light: #F6F8FF;
+  --red-color: #f74141;
+  --red-light: #fdd5d5;
+  --success: #008000;
+  --success-light: #d7f7d7;
 }
 
 a {
@@ -33,7 +36,7 @@ input:-webkit-autofill, input:-webkit-autofill:active, input:-webkit-autofill:fo
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 40px !important;
+  font-size: 32px !important;
   color: var(--main);
 }
 @media (max-width: 720px) {

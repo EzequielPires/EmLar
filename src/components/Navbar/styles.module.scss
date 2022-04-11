@@ -1,24 +1,24 @@
 .navbar {
-    background: var(--main);
-    width: calc(100vw - 316px);
+    background: #fff;
+    width: calc(100vw - 300px);
     height: 80px;
     position: fixed;
     top: 0;
-    left: 316px;
-    border-radius: 0 0 0 16px;
+    left: 300px;
+    border-bottom: 1px solid #d3d3d3;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
     p {
-        color: #fff;
+        color: #333;
         font-size: 1.2rem;
         font-weight: 300;
         margin-bottom: 0;
     }
     .dropdown_toggle {
         background: transparent !important;
-        color: #fff;
+        color: #333;
         border: 0;
         display: flex;
         align-items: center;
@@ -28,7 +28,7 @@
             width: 60px;
             padding: 2px;
             border-radius: 50%;
-            border: 2px solid #fff;
+            border: 2px solid var(--main);
             overflow: hidden;
             img {
                 width: 100%;

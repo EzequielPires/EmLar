@@ -2,7 +2,7 @@ import { User } from "../entities/User";
 import useForm from "../hooks/useForm";
 
 export class UserFactory {
-    public startUserForm(): User {
+    public static startUserForm(): User {
         const user = new User();
         user.name = useForm('name');
         user.email = useForm('email');

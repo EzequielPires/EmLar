@@ -8,6 +8,10 @@ import { RouterScrollProvider } from '@moxy/next-router-scroll';
 import { Header } from "../components/Header";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { AuthProvider } from "../contexts/AuthContext";
+import { AlertContext, AlertProvider } from "../contexts/AlertContext";
+import { Alert } from "../components/Alert";
+import { UserProvider } from "../contexts/UserContext";
 
 
 function MyApp({ Component, pageProps }) {
@@ -26,10 +30,17 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <RouterScrollProvider>
-      <div>
-        {visibleHeader && <Header />}
-        <Component {...pageProps} />
-      </div>
+      <AuthProvider>
+        <AlertProvider>
+          <UserProvider>
+            <div>
+              {visibleHeader && <Header />}
+              <Component {...pageProps} />
+              <Alert />
+            </div>
+          </UserProvider>
+        </AlertProvider>
+      </AuthProvider>
     </RouterScrollProvider>
   )
 }

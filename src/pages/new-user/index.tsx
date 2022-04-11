@@ -3,16 +3,26 @@ import { Input } from "../../components/Input";
 import styles from "./styles.module.scss";
 import Logo from "../../assets/images/logo.svg";
 import { Icon } from "../../components/Icon";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../contexts/UserContext";
+import { AlertContext } from "../../contexts/AlertContext";
 
 export default function NewUser() {
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
+    const {alertShow} = useContext(AlertContext);
+    const {user, create} = useContext(UserContext);
     const [password, setPassword] = useState('');
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const res = await create();
+        if(!res) {
+            alertShow("danger", "Falha na criação de usuário, tente novamente.");
+        } else {
+            alertShow("success", "Usuário criado com sucesso.");
+        }
+    }
     return (
         <div className={styles.container}>
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={handleSubmit}>
                 <header>
                     <Link href="/">
                         <a>
@@ -23,8 +33,7 @@ export default function NewUser() {
                 </header>
                 <main className="mt-4">
                     <Input
-                        value={name}
-                        onChange={setName}
+                        {...user.name}
                         label={"Nome"}
                         id={"name"}
                         placeholder={"Entre com seu nome completo"}
@@ -32,8 +41,7 @@ export default function NewUser() {
                     />
                     <div className="mt-4"></div>
                     <Input
-                        value={phone}
-                        onChange={setPhone}
+                        {...user.phone}
                         label={"Telefone/Celular"}
                         id={"phone"}
                         placeholder={"Entre com o número do seu celular"}
@@ -41,8 +49,7 @@ export default function NewUser() {
                     />
                     <div className="mt-4"></div>
                     <Input
-                        value={email}
-                        onChange={setEmail}
+                        {...user.email}
                         label={"E-mail"}
                         id={"email"}
                         placeholder={"Entre com seu e-mail"}
@@ -50,8 +57,7 @@ export default function NewUser() {
                     />
                     <div className="mt-4"></div>
                     <Input
-                        value={password}
-                        onChange={setPassword}
+                        {...user.password}
                         label={"Senha"}
                         id={"password"}
                         placeholder={"Entre com sua senha"}
@@ -62,7 +68,7 @@ export default function NewUser() {
                         value={password}
                         onChange={setPassword}
                         label={"Repita a senha"}
-                        id={"password"}
+                        id={"password-repeat"}
                         placeholder={"Entre com sua senha"}
                         type={"password"}
                     />

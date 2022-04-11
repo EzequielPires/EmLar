@@ -1,17 +1,23 @@
 import Link from "next/link";
 import router from "next/router";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Logo from "../../assets/images/logo.svg";
 import { Icon } from "../../components/Icon";
 import { Input } from "../../components/Input";
+import { AlertContext } from "../../contexts/AlertContext";
+import { AuthContext } from "../../contexts/AuthContext";
 import styles from "./styles.module.scss";
 
 export default function Login() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const handleSign = (e) => {
+    const { email, password, signIn } = useContext(AuthContext);
+    const {alertShow} = useContext(AlertContext);
+
+    const handleSign = async (e) => {
         e.preventDefault();
-        router.push('/admin');
+        const res = await signIn();
+        if(!res) {
+            alertShow("danger", "Falha no login, tente novamente.");
+        }
     }
     return (
         <div className={styles.container}>
@@ -26,21 +32,19 @@ export default function Login() {
                 </header>
                 <main className="mt-4">
                     <Input
-                        value={email}
-                        onChange={setEmail}
                         label={"E-mail"}
                         id={"email"}
                         placeholder={"Entre com seu e-mail"}
                         type={"text"}
+                        {...email}
                     />
                     <div className="mt-4"></div>
                     <Input
-                        value={password}
-                        onChange={setPassword}
                         label={"Senha"}
                         id={"password"}
                         placeholder={"Entre com sua senha"}
                         type={"password"}
+                        {...password}
                     />
                     <div className="d-flex align-items-center justify-content-between mt-3">
                         <div className={styles.checkbox + " d-flex align-items-center gap-2"}>

@@ -15,7 +15,7 @@ export function Navbar() {
                     </div>
                     Ezequiel Pires
                     <div className="mt-1">
-                        <Icon name={"arrow-down"} color="#fff" size={16} />
+                        <Icon name={"arrow-down"} color="#333" size={16} />
                     </div>
                 </button>
             </div>

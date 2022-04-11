@@ -13,6 +13,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        &:last-child {
+            border: 0;
+        }
         .title {
             font-size: .875rem;
             font-weight: 700;
