@@ -36,9 +36,9 @@ export function AsideBar() {
                         <a>Imóveis</a>
                     </Link>
                 </li>
-                <li className={router.asPath === "/admin/tipos-imoveis" ? styles.active : null}>
-                    <Link href="/admin/tipos-imoveis">
-                        <a>Tipos</a>
+                <li className={router.asPath === "/admin/opcoes" ? styles.active : null}>
+                    <Link href="/admin/opcoes">
+                        <a>Opções</a>
                     </Link>
                 </li>
             </ul>

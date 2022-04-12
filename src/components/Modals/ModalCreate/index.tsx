@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
-import useForm from "../../hooks/useForm";
-import { api } from "../../services/api";
-import { Input } from "../Input";
+import useForm from "../../../hooks/useForm";
+import { api } from "../../../services/api";
+import { Input } from "../../Input";
 import styles from "./styles.module.scss"
 
-export function ModalTypeImmobile({ submit }) {
+export function ModalCreate({ submit, type }) {
     const [show, setShow] = useState(false);
     const name = useForm('name');
 
@@ -28,7 +28,7 @@ export function ModalTypeImmobile({ submit }) {
                     <Input
                         id={"name"}
                         type={"text"}
-                        placeholder={"Digite um nome para o tipo"}
+                        placeholder={"Digite um nome"}
                         label={"Nome"}
                         {...name}
                     />
@@ -36,7 +36,7 @@ export function ModalTypeImmobile({ submit }) {
                 <Modal.Footer>
                     <button className={styles.btn_prev} onClick={handleClose}>Voltar</button>
                     <button className={styles.btn_submit} onClick={() => {
-                        submit('type-immobile', name.value)
+                        submit(type ,name.value)
                         handleClose();
                     }}>Salvar</button>
                 </Modal.Footer>

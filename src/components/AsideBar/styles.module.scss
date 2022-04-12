@@ -2,6 +2,8 @@
     background: var(--main);
     height: 100vh;
     width: 300px;
+    position: sticky;
+    top: 0;
     .header {
         padding-left: 2rem;
         height: 79px;

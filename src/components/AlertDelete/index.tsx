@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { FaTrashAlt } from "react-icons/fa";
 
-export function AlertDelete({submit, name, id}) {
+export function AlertDelete({submit, name, id, type}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -21,7 +21,7 @@ export function AlertDelete({submit, name, id}) {
                 <Modal.Footer>
                     <button className={styles.btn_prev} onClick={handleClose}>Voltar</button>
                     <button className={styles.btn_submit} onClick={() => {
-                        submit(id);
+                        submit(id, type);
                         handleClose();
                     }}>Confirmar</button>
                 </Modal.Footer>
