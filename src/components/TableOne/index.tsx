@@ -1,7 +1,6 @@
 import { AlertDelete } from "../AlertDelete";
 import { ModalEdit } from "../Modals/ModalEdit";
 import { ModalCreate } from "../Modals/ModalCreate";
-import { ModalTypeImmobileEdit } from "../ModalTypeImmobileEdit";
 import styles from "./styles.module.scss";
 
 export function TableOne({handleSubmit, handleEdit, handleDelete, type, title, list}) {
@@ -24,7 +23,7 @@ export function TableOne({handleSubmit, handleEdit, handleDelete, type, title, l
                     </div>
                 </div>
                 {list.length > 0 ? list.map(item => (
-                    <div className={styles.row}>
+                    <div key={item.id} className={styles.row}>
                         <div className={styles.item}>
                             <span>{item.id}</span>
                         </div>
