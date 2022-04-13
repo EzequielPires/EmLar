@@ -36,6 +36,10 @@ function MyApp({ Component, pageProps }) {
         <AlertProvider>
           <UserProvider>
             <div>
+              <Head>
+                <title>EmLar - Imobiliária em Catalão.</title>
+                <meta name="description" content="Se você está procurando uma lar para você e sua fámilia, o EmLar pode te ajudar. Encontre casas, apartamentos, kitnets e muito mais de forma fácil e rápido e já agente sua visita." />
+              </Head>
               {visibleHeader && <Header />}
               <Component {...pageProps} />
               <Alert />
