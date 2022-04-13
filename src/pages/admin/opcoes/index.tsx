@@ -12,6 +12,7 @@ export default function TiposImoveis() {
     const [listConcierge, setListConcierge] = useState([]);
     const [listTypeKey, setListTypeKey] = useState([]);
     const [listStateImmobile, setListStateImmobile] = useState([]);
+    const [listImmovableRelationship, setListImmovableRelationship] = useState([]);
     
     const {alertShow} = useContext(AlertContext);
     const getTypesImmobiles = async () => {
@@ -20,6 +21,7 @@ export default function TiposImoveis() {
         await api.get('/key/list').then(res => setListTypeKey(res.data.data));
         await api.get('/furniture/list').then(res => setListMobile(res.data.data));
         await api.get('/state-immobile/list').then(res => setListStateImmobile(res.data.data));
+        await api.get('/immovable-relationship/list').then(res => setListImmovableRelationship(res.data.data));
     }
     const handleSubmit = async (type, name) => {
         await api.post(`/${type}/new`, {
@@ -104,6 +106,14 @@ export default function TiposImoveis() {
                     title={"Estado do imóvel"}
                     type={"state-immobile"}
                     list={listStateImmobile}
+                />
+                <TableOne 
+                    handleSubmit={handleSubmit}
+                    handleEdit={handleEdit}
+                    handleDelete={handleDelete}
+                    title={"Relação com imóvel"}
+                    type={"immovable-relationship"}
+                    list={listImmovableRelationship}
                 />
             </div>
         </div>
