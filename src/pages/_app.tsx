@@ -12,7 +12,7 @@ import { AuthProvider } from "../contexts/AuthContext";
 import { AlertContext, AlertProvider } from "../contexts/AlertContext";
 import { Alert } from "../components/Alert";
 import { UserProvider } from "../contexts/UserContext";
-
+import ImgDefault from "../assets/images/image_og.png";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps }) {
               <Head>
                 <title>EmLar - Imobiliária em Catalão, Campo Alegre, Ouvidor, Três Ranchos, Caldas Novas e Região.</title>
                 <meta name="description" content="Se você está procurando uma lar para você e sua fámilia, o EmLar pode te ajudar. Encontre casas, apartamentos, kitnets e muito mais de forma fácil e rápido e já agente sua visita." />
+                <meta property="og:image" content={`https://portalcatalao.com.br/${ImgDefault.src}`} />
               </Head>
               {visibleHeader && <Header />}
               <Component {...pageProps} />
