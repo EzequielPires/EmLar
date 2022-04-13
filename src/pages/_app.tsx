@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
               <Head>
                 <title>EmLar - Imobiliária em Catalão, Campo Alegre, Ouvidor, Três Ranchos, Ipameri, Caldas Novas e Região.</title>
                 <meta name="description" content="Se você está procurando uma lar para você e sua fámilia, o EmLar pode te ajudar. Encontre casas, apartamentos, kitnets e muito mais de forma fácil e rápido e já agente sua visita." />
-                <meta property="og:image" content={`https://portalcatalao.com.br/${ImgDefault.src}`} />
+                <meta property="og:image" content={`https://emlar.com.br/${ImgDefault.src}`} />
                 <meta name="author" content="Ezequiel Pires e Silva" />
                 <meta name="title" content={"EmLar - Imobiliária em Catalão, Campo Alegre, Ouvidor, Três Ranchos, Ipameri, Caldas Novas e Região."} />
                 <meta property="og:title" content={"EmLar - Imobiliária em Catalão, Campo Alegre, Ouvidor, Três Ranchos, Caldas Novas e Região."} />
