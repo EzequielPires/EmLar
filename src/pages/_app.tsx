@@ -15,6 +15,7 @@ import { UserProvider } from "../contexts/UserContext";
 import ImgDefault from "../assets/images/image_og.png";
 
 function MyApp({ Component, pageProps }) {
+  const [url, setUrl] = useState('');
   const router = useRouter();
   const [visibleHeader, setVisibleHeader] = useState(true);
   const verify = () => {
@@ -28,6 +29,7 @@ function MyApp({ Component, pageProps }) {
   }
   useEffect(() => {
     verify();
+    setUrl(location.href);
   }, [router]);
 
   return (
@@ -37,9 +39,15 @@ function MyApp({ Component, pageProps }) {
           <UserProvider>
             <div>
               <Head>
-                <title>EmLar - Imobiliária em Catalão, Campo Alegre, Ouvidor, Três Ranchos, Caldas Novas e Região.</title>
+                <title>EmLar - Imobiliária em Catalão, Campo Alegre, Ouvidor, Três Ranchos, Ipameri, Caldas Novas e Região.</title>
                 <meta name="description" content="Se você está procurando uma lar para você e sua fámilia, o EmLar pode te ajudar. Encontre casas, apartamentos, kitnets e muito mais de forma fácil e rápido e já agente sua visita." />
                 <meta property="og:image" content={`https://portalcatalao.com.br/${ImgDefault.src}`} />
+                <meta name="author" content="Ezequiel Pires e Silva" />
+                <meta name="title" content={"EmLar - Imobiliária em Catalão, Campo Alegre, Ouvidor, Três Ranchos, Ipameri, Caldas Novas e Região."} />
+                <meta property="og:title" content={"EmLar - Imobiliária em Catalão, Campo Alegre, Ouvidor, Três Ranchos, Caldas Novas e Região."} />
+                <meta property="og:type" content="website" />
+                <meta property="og:description" content="Se você está procurando uma lar para você e sua fámilia, o EmLar pode te ajudar. Encontre casas, apartamentos, kitnets e muito mais de forma fácil e rápido e já agente sua visita." />
+                <meta property="og:url" content={url} />
               </Head>
               {visibleHeader && <Header />}
               <Component {...pageProps} />
