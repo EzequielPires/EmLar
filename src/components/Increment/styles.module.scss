@@ -1,0 +1,45 @@
+.increment {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    .title {
+        h4 {
+            color: #333;
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+        p {
+            font-size: .75rem;
+            margin-bottom: 0;
+            color: #555;
+        }
+        margin-right: 3rem;
+    }
+    .value {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        p {
+            margin-bottom: 0;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #555;
+        }
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            border: 1px solid #d3d3d3;
+            svg {
+                font-size: .75rem;
+                color: #555;
+            }
+        }
+    }
+}

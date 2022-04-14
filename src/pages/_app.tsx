@@ -24,7 +24,8 @@ function MyApp({ Component, pageProps }) {
       router.asPath === "/imoveis" ||
       router.asPath === "/admin" ||
       router.asPath === "/admin/imoveis" ||
-      router.asPath === "/admin/opcoes"
+      router.asPath === "/admin/opcoes" || 
+      router.asPath === "/admin/anunciar-imovel"
       ? setVisibleHeader(false) : setVisibleHeader(true);
   }
   useEffect(() => {

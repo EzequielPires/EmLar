@@ -5,7 +5,7 @@ import styles from "./styles.module.scss";
 export function Navbar() {
     return (
         <nav className={styles.navbar}>
-            <p>Hello, Ezequiel</p>
+            <p>Hello, <strong>Ezequiel</strong></p>
             <div className="d-flex align-items-center gap-3">
                 <Icon name={"search"} color={"#fff"} size={24} />
                 <Icon name={"notification"} color={"#fff"} size={24} />

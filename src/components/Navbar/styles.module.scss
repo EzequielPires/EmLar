@@ -16,6 +16,9 @@
         font-size: 1.2rem;
         font-weight: 300;
         margin-bottom: 0;
+        strong {
+            font-weight: 700;
+        }
     }
     .dropdown_toggle {
         background: transparent !important;
