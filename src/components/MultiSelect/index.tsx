@@ -8,7 +8,7 @@ export function MultiSelect({title, options}) {
             </div>
             <div className="d-flex mt-3">
                 {options.map(item => (
-                    <button>{item.name}</button>
+                    <button key={item.id}>{item.name}</button>
                 ))}
             </div>
         </div>
