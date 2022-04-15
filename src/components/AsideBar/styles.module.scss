@@ -1,5 +1,6 @@
 .aside_bar {
-    background: var(--main);
+    background: #fff;
+    border-right: 1px solid #d3d3d3;
     height: 100vh;
     width: 300px;
     position: sticky;
@@ -11,29 +12,35 @@
         align-items: center;
         justify-content: center;
         padding-right: 2rem;
-        img {
-            height: 56px;
-        }
     }
     ul {
-        border-top: 1px solid rgba(255, 255, 255, 0.123);
-        padding-left: 2rem;
+        border-top: 1px solid #d3d3d3;
+        padding-left: 0;
         padding-top: 2rem;
         li {
             list-style: none;
             height: 56px;
             padding-left: 1.5rem;
-            border-radius: 56px 0 0 56px;
             display: flex;
             align-items: center;
             margin-bottom: 1rem;
+            position: relative;
             &.active {
-                background: #fff;
+                background: var(--light);
+                &::after {
+                    content: '';
+                    position: absolute;
+                    height: 100%;
+                    width: 4px;
+                    background: var(--main);
+                    top: 0;
+                    left: 0;
+                }
                 a {
                     font-weight: 600;
-                    color: var(--main);
+                    color: #333;
                     svg, i {
-                        color: var(--main) !important;
+                        color: #333 !important;
                         background-color: var(--main) !important;
                     }
                 }
@@ -43,7 +50,7 @@
                 align-items: center;
                 gap: 1rem;
                 text-decoration: none;
-                color: #fff;
+                color: #333;
                 font-size: 1rem;
             }
         }

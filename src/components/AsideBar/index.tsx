@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Icon } from "../Icon";
-import Logo from "../../assets/images/logo-white.svg";
+import Logo from "../../assets/images/logo.svg";
 import styles from "./styles.module.scss";
 import { useRouter } from "next/router";
 
@@ -16,17 +16,17 @@ export function AsideBar() {
             <ul>
                 <li className={router.asPath === "/admin" ? styles.active : null}>
                     <Link href="/admin">
-                        <a><Icon name={"home"} size={24} color={"#fff"} />Dashboard</a>
+                        <a><Icon name={"home"} size={24} color={"#333"} />Dashboard</a>
                     </Link>
                 </li>
                 <li className={router.asPath === "/admin/profile" ? styles.active : null}>
                     <Link href="/">
-                        <a><Icon name={"user"} size={24} color={"#fff"} />User profiles</a>
+                        <a><Icon name={"user"} size={24} color={"#333"} />User profiles</a>
                     </Link>
                 </li>
                 <li>
                     <Link href="/">
-                        <a><Icon name={"setting"} size={24} color={"#fff"} />Settings</a>
+                        <a><Icon name={"setting"} size={24} color={"#333"} />Settings</a>
                     </Link>
                 </li>
             </ul>
@@ -34,6 +34,11 @@ export function AsideBar() {
                 <li className={router.asPath === "/admin/imoveis" ? styles.active : null}>
                     <Link href="/admin/imoveis">
                         <a>Imóveis</a>
+                    </Link>
+                </li>
+                <li className={router.asPath === "/admin/anunciar-imovel" ? styles.active : null}>
+                    <Link href="/admin/anunciar-imovel">
+                        <a>Anunciar Imóvel</a>
                     </Link>
                 </li>
                 <li className={router.asPath === "/admin/opcoes" ? styles.active : null}>
