@@ -11,6 +11,7 @@ export function MultiSelect({title, options}) {
                     <button key={item.id}>{item.name}</button>
                 ))}
             </div>
+            
         </div>
     )
 }
