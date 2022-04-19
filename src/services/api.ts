@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'https://emlar-database.herokuapp.com/'
+    baseURL: 'http://54.232.140.34:3000/'
 })
