@@ -8,11 +8,11 @@ export function CardAnnouncement({ announcement }) {
             <a>
                 <div className={styles.card}>
                     <div className={styles.card_header}>
-                        <img src={announcement.img} alt="" />
+                        <img src={`http://localhost:3000/photos/${announcement.photos[0].filename}`} alt="" />
                     </div>
                     <div className={styles.card_body}>
                         <span className={styles.price}><span className={styles.mark}>R$ </span>{announcement.price}</span>
-                        <span className={styles.title}>{announcement.title}</span>
+                        <span className={styles.title}>{announcement.address ? announcement.address.locale : ''}</span>
                         <div className="d-flex gap-4">
                             <div className={styles.item}>
                                 <Icon name={"bed"} color={"#555"} size={20} />

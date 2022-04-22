@@ -17,6 +17,10 @@
         background: transparent;
         font-weight: 600;
         color: #555;
+        &.active {
+            border: 1px solid var(--main);
+            background: var(--light);
+        }
         &:first-child {
             margin-right: 1rem !important;
         }

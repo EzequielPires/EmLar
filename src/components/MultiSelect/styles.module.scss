@@ -18,6 +18,11 @@
         font-weight: 600;
         color: #555;
         margin-right: 1rem;
+        transition: .3s;
+        &.active {
+            border: 1px solid var(--main);
+            background: var(--light);
+        }
         &:last-child {
             margin-right: 0;
         }
