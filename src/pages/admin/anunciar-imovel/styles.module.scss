@@ -1,8 +1,15 @@
 .container {
     display: flex;
     .content {
-        margin-top: 80px;
+        margin: 2rem 0;
         padding: 2rem;
+        width: 720px;
+        background: #fff;
+        border-radius: 16px;
+        border: 1px solid #d3d3d3;
+        &:first-child {
+            margin-top: 112px;
+        }
         h2 {
             color: #333;
             font-size: 1.8rem;
@@ -21,6 +28,78 @@
             border-bottom: 1px solid #d3d3d3;
             padding-bottom: 1.5rem;
         }
-        
     }
+}
+.gallery {
+    width: 100%;
+    display: flex;
+    background: #fff;
+    height: 480px;
+    position: relative;
+    label {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
+        width: 48px;
+        height: 48px;
+        background: var(--main);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        svg {
+            font-size: 1.5rem;
+        }
+    }
+    svg {
+        color: #fff;
+        font-size: 2rem;
+    }
+    .main {
+        width: 50%;
+        background: #1d1d1d;
+        height: 100%;
+        border: 1px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .outer {
+        flex: 1;
+        .image {
+            flex: 1;
+            height: 240px;
+            background: #333;
+            border: 1px solid #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.btn_submit {
+    width: 320px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    border-radius: 6px;
+    background: var(--main);
+    color: #fff;
+    font-weight: 600;
+    border: 0;
+    box-shadow: 0 0 8px rgba($color: #000000, $alpha: 0.25);
 }

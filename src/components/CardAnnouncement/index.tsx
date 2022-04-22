@@ -8,7 +8,7 @@ export function CardAnnouncement({ announcement }) {
             <a>
                 <div className={styles.card}>
                     <div className={styles.card_header}>
-                        <img src={`http://localhost:3000/photos/${announcement.photos[0].filename}`} alt="" />
+                        {announcement.photos[0] ? <img src={`http://localhost:3000/photos/${announcement.photos[0].filename}`} alt="" /> : null}
                     </div>
                     <div className={styles.card_body}>
                         <span className={styles.price}><span className={styles.mark}>R$ </span>{announcement.price}</span>
