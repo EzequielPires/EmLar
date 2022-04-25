@@ -1,3 +1,4 @@
+import { parseCookies } from "nookies";
 import { api } from "./api"
 
 export const signInRequest = async (email, password) => {
@@ -16,3 +17,10 @@ export const signInRequest = async (email, password) => {
         token: user.data.token
     }
 }
+export async function recoverUserInformation() {
+    const { 'user': object } = parseCookies();
+    const userObject = JSON.parse(object);
+    return {
+      user: userObject
+    }
+  }

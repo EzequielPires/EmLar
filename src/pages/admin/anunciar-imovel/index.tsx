@@ -1,3 +1,4 @@
+import Router from "next/router";
 import { useContext, useEffect, useState } from "react";
 import { FaImage, FaPlus } from "react-icons/fa";
 import { AsideBar } from "../../../components/AsideBar";
@@ -98,6 +99,7 @@ export default function AnunciarImovel() {
         });
         if(res.success) {
             alertShow("success", "Anúncio cadastrado com sucesso.");
+            Router.push('/admin/imoveis')
         } else {
             alertShow("danger", "Falha no login, tente novamente.");
         }
