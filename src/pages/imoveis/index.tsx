@@ -38,7 +38,7 @@ export default function Imoveis() {
                 </div>
                 <div className={styles.list}>
                     {immobiles.map(item => (
-                        <CardAnnouncement announcement={item} />
+                        <CardAnnouncement key={item.id} announcement={item} />
                     ))}
                 </div>
             </div>
