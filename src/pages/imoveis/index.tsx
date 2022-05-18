@@ -2,13 +2,19 @@ import styles from "./styles.module.scss";
 import { CardAnnouncement } from "../../components/CardAnnouncement";
 import { Icon } from "../../components/Icon";
 import { Filter } from "../../components/Filter";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 
 export default function Imoveis() {
-    const announcement = {
-        img: "https://richtergruppe.com.br/wp-content/uploads/312484-como-escolher-o-momento-certo-para-vender-um-terreno-ou-imovel.jpg",
-        title: "Rua José Felipe - Parque Independência",
-        price: "500.000,00"
+    const [immobiles, setImmobiles] = useState([]);
+
+    const findAllImmobiles = async () => {
+        const res = await api.get('immobile/list').then(res => res.data);
+        if(res.success) setImmobiles(res.data);
     }
+    useEffect(() => {
+        findAllImmobiles();
+    }, []);
     return (
         <>
             <nav className={styles.nav_search}>
@@ -31,22 +37,9 @@ export default function Imoveis() {
                     <span className={styles.total}>150 resultados</span>
                 </div>
                 <div className={styles.list}>
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
-                    <CardAnnouncement announcement={announcement} />
+                    {immobiles.map(item => (
+                        <CardAnnouncement announcement={item} />
+                    ))}
                 </div>
             </div>
         </>
